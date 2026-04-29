@@ -74,7 +74,7 @@ tab1, tab2, tab3 = st.tabs(["État du Stock", "Prévisions de Demande", "Simulat
 with tab1:
     # --- SECTION IMPACT FINANCIER (Ajoutée par mes soins) ---
     st.markdown("---")
-    st.subheader("💰 Impact Financier de la Prévention")
+    st.subheader("Impact Financier de la Prévention")
     
     # Hypothèses business pour l'analyse
     total_unites = df['Order_Demand'].sum()
