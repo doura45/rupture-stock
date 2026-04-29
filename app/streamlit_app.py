@@ -64,11 +64,11 @@ with st.sidebar:
     st.write("Ce projet vise à prédire la demande de produits pour optimiser les niveaux de stock.")
 
 # --- TITRE PRINCIPAL ---
-st.title("📦 Supply Chain — Prévision des Ruptures de Stock")
+st.title("Supply Chain — Prévision des Ruptures de Stock")
 st.markdown("---")
 
 # --- ONGLETS ---
-tab1, tab2, tab3 = st.tabs(["📊 État du Stock", "🔮 Prévisions de Demande", "⚙️ Simulateur de Réapprovisionnement"])
+tab1, tab2, tab3 = st.tabs(["État du Stock", "Prévisions de Demande", "Simulateur de Réapprovisionnement"])
 
 # --- ONGLET 1 : ÉTAT DU STOCK ---
 with tab1:
@@ -140,7 +140,7 @@ with tab3:
     point_de_commande = (v_jour * d_livraison) + s_securite
     
     st.markdown("---")
-    st.markdown(f"### 📢 Seuil d'alerte : **{point_de_commande} unités**")
+    st.markdown(f"### Seuil d'alerte : **{point_de_commande} unités**")
     st.write(f"""
     **Explication :** 
     - Vous vendez {v_jour} unités par jour.
@@ -149,7 +149,7 @@ with tab3:
     """)
     
     if point_de_commande > 1000:
-        st.warning("⚠️ Attention : Le seuil est élevé, assurez-vous d'avoir la capacité de stockage nécessaire.")
+        st.warning("Attention : Le seuil est élevé, assurez-vous d'avoir la capacité de stockage nécessaire.")
 
 # --- FOOTER ---
 st.markdown("---")
