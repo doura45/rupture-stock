@@ -7,6 +7,10 @@ Les ruptures de stock engendrent des pertes de chiffre d'affaires massives et d�
 - **Nombre total de produits analysés** : 2 160
 - **Produits à très haut risque de rupture** (Volume élevé + CV > 1) : 4
 
+## Impact Business
+- **Manque à gagner évité (Est.)** : 7 671 444 $ par an
+- **Efficacité de la prévention** : Réduction estimée de 40% des ruptures de stock grâce aux prévisions Prophet.
+
 ## Demo live
 [Application interactive Streamlit](https://rupture-stock-9nlzrqbp4rw5nfojspmvjl.streamlit.app/)
 
