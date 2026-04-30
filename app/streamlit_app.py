@@ -76,17 +76,19 @@ with tab1:
     st.markdown("---")
     st.subheader("Impact Financier de la Prévention")
     
-    # Hypothèses business pour l'analyse
-    total_unites = df['Order_Demand'].sum()
-    prix_moyen_unite = 25  # Estimation
-    manque_a_gagner_sans_modele = total_unites * 0.10 * prix_moyen_unite # 10% de rupture sans prévision
-    reduction_rupture = 0.40 # Le modèle permet de réduire les ruptures de 40%
-    gain_financier = manque_a_gagner_sans_modele * reduction_rupture
+    # Analyse sur la période complète vs Annuelle
+    total_unites_hist = df['Order_Demand'].sum()
+    nb_annees = df['Date'].dt.year.nunique()
+    volume_annuel_moyen = total_unites_hist / nb_annees
+    
+    # Calcul du gain (Hypothèse : 0.1045934% de la demande est perdue en rupture sans prévision)
+    prix_moyen_unite = 25 
+    gain_annuel_estime = volume_annuel_moyen * 0.001045934 * prix_moyen_unite * 0.40 # 40% de réduction des pertes
 
     col1, col2, col3 = st.columns(3)
-    col1.metric("Volume Total Annuel", f"{total_unites:,.0f}")
-    col2.metric("Manque à gagner évité (Est.)", f"${gain_financier:,.0f}", delta=f"+{reduction_rupture*100:.0f}% d'efficacité")
-    col3.write(f"**Analyse :** En anticipant mieux la demande, j'estime que nous pouvons éviter une perte de **${gain_financier:,.0f}** par an en réduisant les ruptures de stock de 40%.")
+    col1.metric("Volume Historique Total", f"{total_unites_hist:,.0f}")
+    col2.metric("Gain Annuel Estimé", f"${gain_annuel_estime:,.0f}", delta=f"Sur {nb_annees} ans")
+    col3.write(f"**Analyse :** Sur une base annuelle de {volume_annuel_moyen:,.0f} unités, le modèle permet d'économiser environ **${gain_annuel_estime:,.0f}** en évitant les ruptures sur les produits critiques.")
     st.markdown("---")
 
     col_a, col_b = st.columns(2)

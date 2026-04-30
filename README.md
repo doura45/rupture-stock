@@ -5,7 +5,7 @@ Les ruptures de stock engendrent des pertes de chiffre d'affaires massives et d�
 
 ## Résultats clés (vrais chiffres)
 - **Nombre total de produits analysés** : 2 160
-- **Produits à très haut risque de rupture** (Volume élevé + CV > 1) : 4
+- **Produits critiques identifiés** : 4 (Règle : Volume > 100M unités & CV > 2.0)
 
 ## Impact Business
 - **Manque à gagner évité (Est.)** : 7 671 444 $ par an
